@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Abulix Panel</title>
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/admin/styles.css" />
+</head>
+<body>
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation">
+      <div class="sidebar-head">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <div class="brand-title">ABULIX</div>
+            <div class="brand-sub">Panel</div>
+          </div>
+        </div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar-foot">
+        <button class="btn btn-ghost btn-sm" id="themeToggle" title="Theme">🌓</button>
+        <button class="btn btn-ghost btn-sm" id="langToggle" title="Language">EN</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+        <h1 class="topbar-title" id="pageTitle">Dashboard</h1>
+        <div class="topbar-actions">
+          <span class="user-chip" id="userChip"></span>
+          <button class="btn btn-ghost btn-sm" id="logoutBtn">خروج</button>
+        </div>
+      </header>
+      <main class="content" id="view">
+        <div class="loading-block"><div class="spinner"></div></div>
+      </main>
+    </div>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  </div>
+  <div class="toasts" id="toasts"></div>
+  <div class="modal-root" id="modalRoot"></div>
+  <script type="module" src="/admin/app.js"></script>
+</body>
+</html>
