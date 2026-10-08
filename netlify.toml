@@ -1,0 +1,41 @@
+[build]
+  publish = "public"
+  edge_functions = "netlify/edge-functions"
+
+# API + health check run on the edge runtime
+[[edge_functions]]
+  path = "/api/*"
+  function = "panel"
+
+[[edge_functions]]
+  path = "/healthz"
+  function = "panel"
+
+# Pretty URLs
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/login.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/"
+  to = "/admin/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
