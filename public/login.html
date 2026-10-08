@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ورود · Abulix Panel</title>
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/admin/styles.css" />
+</head>
+<body class="login-body">
+  <main class="login-wrap">
+    <section class="login-card" role="form" aria-labelledby="loginTitle">
+      <div class="login-brand">
+        <div class="brand-mark">A</div>
+        <div>
+          <div class="brand-title" id="loginTitle">Abulix Panel</div>
+          <div class="brand-sub" id="lblSub">ورود به پنل مدیریت</div>
+        </div>
+      </div>
+
+      <form id="loginForm" class="form" autocomplete="on" novalidate>
+        <label class="field">
+          <span class="field-label" id="lblUser">نام کاربری</span>
+          <input type="text" name="username" required autocomplete="username" spellcheck="false" />
+        </label>
+        <label class="field">
+          <span class="field-label" id="lblPass">رمز عبور</span>
+          <input type="password" name="password" required autocomplete="current-password" />
+        </label>
+        <label class="check">
+          <input type="checkbox" name="remember" />
+          <span id="lblRemember">مرا به خاطر بسپار</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block" id="btnSubmit">
+          <span id="lblLogin">ورود</span>
+        </button>
+
+        <div class="alert alert-danger" id="loginError" hidden></div>
+      </form>
+
+      <div class="login-foot">
+        <span>Abulix Panel</span>
+        <span class="dot">·</span>
+        <span>Netlify Edge</span>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/login.js"></script>
+</body>
+</html>

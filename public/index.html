@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abulix Panel</title>
+  <link rel="icon" href="/favicon.svg" />
+  <style>
+    html,body{margin:0;height:100%;background:#0B0F14;color:#F1F5F9;font-family:system-ui,sans-serif}
+    .wrap{display:flex;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:16px}
+    .spinner{width:32px;height:32px;border:3px solid #263241;border-top-color:#6366F1;border-radius:50%;animation:spin 0.8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+  <script>
+    (async () => {
+      try {
+        const r = await fetch('/api/auth/me', { credentials: 'include' });
+        location.replace(r.ok ? '/admin/' : '/login');
+      } catch { location.replace('/login'); }
+    })();
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="spinner"></div>
+    <div>Abulix Panel</div>
+  </div>
+</body>
+</html>
