@@ -1054,5 +1054,5 @@ const AbulixWorker={async fetch(request,context){
     return new Response(JSON.stringify({ok:false,error:"worker_exception",message:String(error&&error.message||error)}),{status:500,headers:{"Content-Type":"application/json;charset=utf-8","Cache-Control":"no-store"}});
   }
 }};
-export default AbulixWorker;
+export default (request, context) => AbulixWorker.fetch(request, context);
 export const config={path:"/*"};
